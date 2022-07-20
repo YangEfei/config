@@ -20,6 +20,8 @@ packer.startup({
     use({ "nvim-lualine/lualine.nvim", requires = "kyazdani42/nvim-web-devicons" })
     -- nvim-treesitter
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
+    -- indent-blankline
+    use('lukas-reineke/indent-blankline.nvim')
     -- telescope
     use({ 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = 'nvim-lua/plenary.nvim' })
     -- telescope extensions
