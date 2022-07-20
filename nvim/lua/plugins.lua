@@ -22,7 +22,9 @@ packer.startup({
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     -- telescope
     use({ 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = 'nvim-lua/plenary.nvim' })
-
+    -- telescope extensions
+    use("LinArcX/telescope-env.nvim")
+    use("nvim-telescope/telescope-ui-select.nvim")
     ----------------- lsp -----------------
     -- nvim-lspconfig
     use({ 'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer' })
