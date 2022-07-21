@@ -1,6 +1,10 @@
--- To avoid compling erorrs
-require 'nvim-treesitter.install'.compilers = { "c99" }
-require'nvim-treesitter.configs'.setup {
+local status, treesitter = pcall(require, "nvim-treesitter.configs")
+if not status then
+  vim.notify("没有找到 nvim-treesitter")
+  return
+end
+
+treesitter.setup({
   -- A list of parser names, or "all"
   ensure_installed = { "bash", "c", "cpp", "lua", "vim" },
 
@@ -44,7 +48,7 @@ require'nvim-treesitter.configs'.setup {
   indent = {
     enable = true
   }
-}
+})
 
 -- 开启 Folding
 vim.wo.foldmethod = 'expr'

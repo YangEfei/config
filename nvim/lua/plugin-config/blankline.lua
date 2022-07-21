@@ -8,7 +8,25 @@ end
 vim.cmd [[highlight IndentBlanklineContextChar guifg=#61AFEF gui=nocombine]]
 
 blankline.setup({
+  -- 空行占位符
+  space_char_blankline = " ",
+  -- 使用 treesitter 判断上下文
   show_current_context = true,
   show_current_context_start = true,
-  char_list = {'|', '¦', '┆', '┊'}
+  context_patterns = {
+    "class",
+    "function",
+    "method",
+    "element",
+    "^if",
+    "^while",
+    "^for",
+    "^object",
+    "^table",
+    "block",
+    "arguments",
+  },
+  -- 竖线样式
+  char = '|'
+  -- char_list = {'|', '¦', '┆', '┊'}
 })
