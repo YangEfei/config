@@ -44,7 +44,7 @@ packer.startup({
     -- lspkind-nvim
     use('onsails/lspkind-nvim')
     -- lspsaga
-    use('tami5/lspsaga.nvim')
+    use('glepnir/lspsaga.nvim')
     -- Lua 增强
     use('folke/lua-dev.nvim')
     -- clangd 增强
