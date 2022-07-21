@@ -27,6 +27,7 @@ lspsaga.init_lsp_saga({
     ref = '諭 ',
     link = ' ',
   },
+  -- preview lines of lsp_finder and definition preview
   max_preview_lines = 10,
   finder_action_keys = {
     -- open = "o",
@@ -50,10 +51,10 @@ lspsaga.init_lsp_saga({
   -- show symbols in winbar must nightly
   symbol_in_winbar = {
     in_custom = false,
-    enable = false,
+    enable = true,
     separator = ' ',
     show_file = true,
-    click_support = false,
+    click_support = true,
   },
   -- show outline
   show_outline = {
@@ -69,24 +70,3 @@ lspsaga.init_lsp_saga({
     auto_refresh = true,
   },
 })
-
--- 为 cmp.lua 提供参数格式
-local lspkind = require('lspkind')
-local M = {}
-M.formatting = {
-  format = lspkind.cmp_format({
-    mode = "symbol_text",
-    --mode = 'symbol', -- show only symbol annotations
-
-    maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-    -- The function below will be called before any actual modifications from lspkind
-    -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-    before = function(entry, vim_item)
-      -- Source 显示提示来源
-      vim_item.menu = "[" .. string.upper(entry.source.name) .. "]"
-      return vim_item
-    end,
-  }),
-}
-
-return M
