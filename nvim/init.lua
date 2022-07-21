@@ -14,6 +14,8 @@ require('plugin-config.lualine')
 require('plugin-config.nvim-treesitter')
 require('plugin-config.telescope')
 require('plugin-config.blankline')
+require('plugin-config.comment')
+
 -- 内置 lsp
 require('lsp.setup')
 require('lsp.nvim-cmp')

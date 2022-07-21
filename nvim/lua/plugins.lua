@@ -51,5 +51,7 @@ packer.startup({
     use('p00f/clangd_extensions.nvim')
     -- git
     use('lewis6991/gitsigns.nvim')
+    -- Comment
+    use('numToStr/Comment.nvim')
   end
 })
