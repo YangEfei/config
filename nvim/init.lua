@@ -15,6 +15,7 @@ require('plugin-config.nvim-treesitter')
 require('plugin-config.telescope')
 require('plugin-config.blankline')
 require('plugin-config.comment')
+require('plugin-config.nvim-surround')
 
 -- 内置 lsp
 require('lsp.setup')
