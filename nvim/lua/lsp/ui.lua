@@ -7,12 +7,13 @@ lspsaga.init_lsp_saga({
   --transparent background. Values between 0-30 are typically most useful.
   saga_winblend = 0,
   -- diagnostic sign
-  diagnostic_header = { "😡", "😥", "😤", "😐" },
+  -- diagnostic_header = { "😡", "😥", "😤", "😐" },
+  diagnostic_header = { " ", " ", " ", "ﴞ " },
   show_diagnostic_source = true,
   -- add bracket or something with diagnostic source, just have 2 elements
   diagnostic_source_bracket = {},
   -- code action title icon
-  code_action_icon = "💡",
+  code_action_icon = "ﯦ ",
   -- if true can press number to execute the codeaction in codeaction window
   code_action_num_shortcut = true,
   -- same as nvim-lightbulb but async
@@ -23,9 +24,12 @@ lspsaga.init_lsp_saga({
     virtual_text = true,
   },
   finder_icons = {
-    def = ' ',
+    -- def = '  ',
+    -- ref = '  ',
+    -- link = '  ',
+    def = '  ',
     ref = '諭 ',
-    link = ' ',
+    link = '  ',
   },
   -- preview lines of lsp_finder and definition preview
   max_preview_lines = 10,
@@ -61,7 +65,7 @@ lspsaga.init_lsp_saga({
     win_position = 'right',
     -- set the special filetype in there which in left like nvimtree neotree defx
     left_with = '',
-    win_width = 30,
+    win_width = 100,
     auto_enter = true,
     auto_preview = true,
     virt_text = '┃',

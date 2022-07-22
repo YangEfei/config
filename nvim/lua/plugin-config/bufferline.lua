@@ -68,11 +68,11 @@ bufferline.setup {
         text = "File Explorer",
         text_align = "left"
       },
-      {
-        filetype = "fugitiveblame",
-        text = "Fugitive Blame",
-        text_align = "left"
-      }
+      -- {
+      --   filetype = "fugitiveblame",
+      --   text = "Fugitive Blame",
+      --   text_align = "left"
+      -- } 
     },
     color_icons = true, -- whether or not to add the filetype icon highlights
     show_buffer_icons = true, -- disable filetype icons for buffers

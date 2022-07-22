@@ -21,7 +21,6 @@ gitsigns.setup({
   numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
   linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
   word_diff = true, -- Toggle with `:Gitsigns toggle_word_diff`
-  keymaps = require("keybindings").gitsigns,
   watch_gitdir = {
     interval = 1000,
     follow_files = true,
@@ -34,9 +33,7 @@ gitsigns.setup({
     delay = 1000,
     ignore_whitespace = false,
   },
-  current_line_blame_formatter_opts = {
-    relative_time = false,
-  },
+  current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
   sign_priority = 6,
   update_debounce = 100,
   status_formatter = nil, -- Use default
@@ -54,5 +51,3 @@ gitsigns.setup({
   },
   on_attach = require("keybindings").gitsigns_on_attach,
 })
-Footer
-

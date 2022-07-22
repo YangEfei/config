@@ -18,6 +18,7 @@ packer.startup({
     use({ 'akinsho/bufferline.nvim', tag = 'v2.*', requires = 'kyazdani42/nvim-web-devicons' })
     -- lualine
     use({ 'nvim-lualine/lualine.nvim', requires = 'kyazdani42/nvim-web-devicons' })
+    use('arkav/lualine-lsp-progress')
     -- nvim-treesitter
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     -- indent-blankline
@@ -51,7 +52,7 @@ packer.startup({
     use('p00f/clangd_extensions.nvim')
     -- git
     use('lewis6991/gitsigns.nvim')
-    use('tpope/vim-fugitive')
+    -- use('tpope/vim-fugitive')
     -- Comment
     use('numToStr/Comment.nvim')
     -- surround
