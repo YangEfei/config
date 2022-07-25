@@ -1,3 +1,7 @@
+# ccls path
+CCLS_PATH=$HOME/.local/share/nvim/lsp_servers/ccls/ccls/Release/
+export PATH=$PATH:$CCLS_PATH
+
 # nvim path
 NVIM_PATH=$HOME/.local/nvim-linux64/bin/
 export PATH=$PATH:$NVIM_PATH

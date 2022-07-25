@@ -10,7 +10,8 @@ local lspconfig = require("lspconfig")
 -- { key: 语言 value: 配置文件 }
 local servers = {
   sumneko_lua = require("lsp.config.lua"), -- /lua/lsp/config/lua.lua
-  clangd = require("lsp.config.clangd"),
+  -- clangd = require("lsp.config.clangd"),
+  ccls = require("lsp.config.ccls"),
 }
 
 for name, config in pairs(servers) do
