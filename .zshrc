@@ -1,3 +1,7 @@
+# ak path
+AK_PATH=$HOME/.local/pha-all/arcanist/bin/
+export PATH=$PATH:$AK_PATH
+
 # ccls path
 CCLS_PATH=$HOME/.local/share/nvim/lsp_servers/ccls/ccls/Release/
 export PATH=$PATH:$CCLS_PATH
