@@ -1,6 +1,9 @@
-# ak path
-AK_PATH=$HOME/.local/pha-all/arcanist/bin/
-export PATH=$PATH:$AK_PATH
+# git completion
+autoload -U +X compinit && compinit
+
+alias shopt='/usr/bin/shopt'
+alias complete='/usr/bin/complete'
+source $HOME/.bashrc
 
 # ccls path
 CCLS_PATH=$HOME/.local/share/nvim/lsp_servers/ccls/ccls/Release/
@@ -16,8 +19,6 @@ autoload -Uz dep_create
 
 # Used for rainbow style in p10k
 export TERM=xterm-256color
-
-autoload -U +X compinit && compinit
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
