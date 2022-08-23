@@ -1,9 +1,16 @@
+# change gcc version
+# GCC_PATH=$HOME/.local/gcc-11.3.0
+# export PATH=$GCC_PATH/bin/:$PATH
+# export LD_LIBRARY_PATH=$GCC_PATH/lib64/:$LD_LIBRARY_PATH
+# export CXX=$GCC_PATH/bin/g++
+# export CC=$GCC_PATH/bin/gcc
+
 # git completion
 autoload -U +X compinit && compinit
 
-alias shopt='/usr/bin/shopt'
-alias complete='/usr/bin/complete'
-source $HOME/.bashrc
+alias shopt=$HOME/.local/bin/shopt
+alias complete=$HOME/.local/bin/complete
+source $HOME/.bash_profile
 
 # ccls path
 CCLS_PATH=$HOME/.local/share/nvim/lsp_servers/ccls/ccls/Release/

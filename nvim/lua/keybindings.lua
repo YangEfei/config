@@ -203,7 +203,7 @@ pluginKeys.comment = {
   -- Visual 模式
   opleader = {
     line = "gc",
-    bock = "gb",
+    block = "gb",
   },
 }
 -- ctrl + /
