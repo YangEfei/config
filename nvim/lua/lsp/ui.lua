@@ -6,12 +6,16 @@ lspsaga.init_lsp_saga({
   --the range of 0 for fully opaque window (disabled) to 100 for fully
   --transparent background. Values between 0-30 are typically most useful.
   saga_winblend = 0,
+  -- when cusor in saga float window
+  -- config these keys to move
+  move_in_saga = {
+    prev = '<C-p>',
+    next = '<C-n>',
+  },
   -- diagnostic sign
+  -- Error, Warn, Info, Hint
   -- diagnostic_header = { "😡", "😥", "😤", "😐" },
   diagnostic_header = { " ", " ", " ", "ﴞ " },
-  show_diagnostic_source = true,
-  -- add bracket or something with diagnostic source, just have 2 elements
-  diagnostic_source_bracket = {},
   -- code action title icon
   code_action_icon = "ﯦ ",
   -- if true can press number to execute the codeaction in codeaction window
@@ -50,7 +54,7 @@ lspsaga.init_lsp_saga({
     exec = "<CR>",
   },
   rename_action_quit = "<ESC>",
-  definition_preview_icon = " ",
+  rename_in_select = true,
   server_filetype_map = {},
   -- show symbols in winbar must nightly
   symbol_in_winbar = {
