@@ -18,6 +18,20 @@ local opt = {
 -- 本地变量
 local map = vim.api.nvim_set_keymap
 
+-- 搜索高亮 hlslens
+local kopts = { noremap = true, silent = true }
+map('n', 'n',
+    [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+    kopts)
+map('n', 'N',
+    [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+    kopts)
+map('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+map('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+map('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+map('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+map('n', '<Leader>l', ':noh<CR>', kopts)
+
 -- $跳到行尾不带空格 (交换$ 和 g_)
 map("v", "$", "g_", opt)
 map("v", "g_", "$", opt)
