@@ -28,8 +28,10 @@ packer.startup({
     -- telescope extensions
     use('LinArcX/telescope-env.nvim')
     use('nvim-telescope/telescope-ui-select.nvim')
-    -- use nvim-hlslens
+    -- nvim-hlslens
     use ('kevinhwang91/nvim-hlslens')
+    -- illuminate
+    use ('RRethy/vim-illuminate')
     ----------------- lsp -----------------
     -- nvim-lspconfig
     use({ 'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer' })

@@ -17,7 +17,7 @@ local servers = {
 for name, config in pairs(servers) do
   if config ~= nil and type(config) == "table" then
     config.on_setup(lspconfig[name])
-    else
+  else
     lspconfig[name].setup({})
   end
 end

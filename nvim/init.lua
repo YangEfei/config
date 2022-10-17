@@ -18,6 +18,7 @@ require('plugin-config.comment')
 require('plugin-config.nvim-surround')
 require('plugin-config.gitsigns')
 require('plugin-config.hlslens')
+require('plugin-config.illuminate')
 
 -- 内置 lsp
 require('lsp.setup')

@@ -3,7 +3,8 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-local opts = {
+local lspconfig_opts = {
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
   settings = {
     Lua = {
       runtime = {
@@ -25,6 +26,9 @@ local opts = {
       telemetry = {
         enable = false,
       },
+      completion = {
+        callSnippet = "Replace"
+      }
     },
   },
   flags = {
@@ -44,14 +48,17 @@ local opts = {
   end,
 }
 
-opts.capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- lspconfig.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- 查看目录等信息
 -- print(vim.inspect(server))
 
 return {
   on_setup = function(server)
-    opts = require("neodev").setup({ lspconfig = opts })
-    server.setup(opts)
+    local ok_rt, lua_ext = pcall(require, "neodev")
+    if not ok_rt then
+      print("Failed to load neodev.")
+    end
+    server.setup(lspconfig_opts)
   end,
 }
