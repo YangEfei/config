@@ -17,7 +17,7 @@ CCLS_PATH=$HOME/.local/share/nvim/lsp_servers/ccls/ccls/Release/
 export PATH=$PATH:$CCLS_PATH
 
 # nvim path
-NVIM_PATH=$HOME/.local/nvim-linux64/bin/
+NVIM_PATH=$HOME/.local/nvim/bin/
 export PATH=$PATH:$NVIM_PATH
 
 # define global function for zsh

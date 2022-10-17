@@ -49,7 +49,7 @@ packer.startup({
     -- lspsaga
     use('glepnir/lspsaga.nvim')
     -- Lua 增强
-    use('folke/lua-dev.nvim')
+    use('folke/neodev.nvim')
     -- clangd 增强
     use('p00f/clangd_extensions.nvim')
     -- git
