@@ -144,11 +144,6 @@ _G.packer_plugins = {
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
   },
-  ["lua-dev.nvim"] = {
-    loaded = true,
-    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/lua-dev.nvim",
-    url = "https://github.com/folke/lua-dev.nvim"
-  },
   ["lualine-lsp-progress"] = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/lualine-lsp-progress",
@@ -163,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/lush.nvim",
     url = "https://github.com/rktjmp/lush.nvim"
+  },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -228,6 +228,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-illuminate"] = {
+    loaded = true,
+    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
   },
   ["vim-vsnip"] = {
     loaded = true,
