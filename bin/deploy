@@ -26,16 +26,12 @@ parser.add_argument('--tag', type=str, default='test',
                     help='生成的OBD镜像名称以及部署的集群名称')
 args = parser.parse_args()
 
-print(ip)
-print(args.deploy_ip_list)
-
 server_config = ''
 for idx in range(len(args.deploy_ip_list)):
   server_config += '\n    - name: server{}\n      ip: {}'.format(idx + 1, args.deploy_ip_list[idx])
 ip_used_port = {}
 server_config_detail = ''
 for idx in range(len(args.deploy_ip_list)):
-  print(args.deploy_ip_list[idx])
   if args.deploy_ip_list[idx] not in ip_used_port:
     ip_used_port[args.deploy_ip_list[idx]] = 2881
   server_config_detail += '\n  server{}:\n    mysql_port: {}\n    rpc_port: {}\n    home_path: {}/z{}\n    zone: zone{}'.format(
@@ -101,4 +97,4 @@ if args.compile:
   for ip in args.deploy_ip_list:
     assert_notice('scp {}/build_{}/tools/ob_admin/ob_admin {}:{}'.format(args.src_dir, args.compile, ip, args.deploy_dir), 'copy ob_admin to deloy dir done')
 assert_notice('obd cluster start {}'.format(args.tag), 'cluster start done, cluster:{}'.format(args.tag))
-assert_notice('obd cluster tenant create {} -n test --max-cpu 10 --mode oracle'.format(args.tag), 'cluster create test tenant done, cluster:{}, tenant:test'.format(args.tag))
+# assert_notice('obd cluster tenant create {} -n test --max-cpu 10 --mode oracle'.format(args.tag), 'cluster create test tenant done, cluster:{}, tenant:test'.format(args.tag))

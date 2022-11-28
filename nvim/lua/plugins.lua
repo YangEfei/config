@@ -28,10 +28,22 @@ packer.startup({
     -- telescope extensions
     use('LinArcX/telescope-env.nvim')
     use('nvim-telescope/telescope-ui-select.nvim')
+    use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' })
     -- nvim-hlslens
     use ('kevinhwang91/nvim-hlslens')
     -- illuminate
     use ('RRethy/vim-illuminate')
+    -- git
+    use('lewis6991/gitsigns.nvim')
+    -- use('tpope/vim-fugitive')
+    -- Comment
+    use('numToStr/Comment.nvim')
+    -- surround
+    use('kylechui/nvim-surround')
+    -- project
+    use('ahmedkhalf/project.nvim')
+    -- tidy
+    use('mcauley-penney/tidy.nvim')
     ----------------- lsp -----------------
     -- nvim-lspconfig
     use({ 'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer' })
@@ -54,12 +66,5 @@ packer.startup({
     use('folke/neodev.nvim')
     -- clangd 增强
     use('p00f/clangd_extensions.nvim')
-    -- git
-    use('lewis6991/gitsigns.nvim')
-    -- use('tpope/vim-fugitive')
-    -- Comment
-    use('numToStr/Comment.nvim')
-    -- surround
-    use('kylechui/nvim-surround')
   end
 })

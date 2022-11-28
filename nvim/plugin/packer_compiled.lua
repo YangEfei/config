@@ -214,10 +214,20 @@ _G.packer_plugins = {
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["project.nvim"] = {
+    loaded = true,
+    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/project.nvim",
+    url = "https://github.com/ahmedkhalf/project.nvim"
+  },
   ["telescope-env.nvim"] = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/telescope-env.nvim",
     url = "https://github.com/LinArcX/telescope-env.nvim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope-ui-select.nvim"] = {
     loaded = true,
@@ -228,6 +238,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tidy.nvim"] = {
+    loaded = true,
+    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/tidy.nvim",
+    url = "https://github.com/mcauley-penney/tidy.nvim"
   },
   ["vim-illuminate"] = {
     loaded = true,

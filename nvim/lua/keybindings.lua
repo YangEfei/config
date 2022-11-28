@@ -186,6 +186,7 @@ map("n", "<leader>bp", ":BufferLinePickClose<CR>", opt)
 -- Telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 map("n", "<C-f>", ":Telescope live_grep<CR>", opt) -- 需要安装 ripgrep
+map("n", "<leader>op", ":Telescope projects<CR>", opt)
 -- Telescope 列表中 插入模式快捷键
 pluginKeys.telescopeList = {
   i = {

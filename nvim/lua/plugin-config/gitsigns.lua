@@ -6,7 +6,6 @@ if not status then
 end
 
 gitsigns.setup({
-
   -- 字母图标 A 增加，C修改，D 删除
   signs = {
     add = { hl = "GitSignsAdd", text = "A|", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
