@@ -29,6 +29,8 @@ packer.startup({
     use('LinArcX/telescope-env.nvim')
     use('nvim-telescope/telescope-ui-select.nvim')
     use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' })
+    use ("nvim-telescope/telescope-file-browser.nvim")
+    use ('alex-laycalvert/telescope-dotfiles.nvim')
     -- nvim-hlslens
     use ('kevinhwang91/nvim-hlslens')
     -- illuminate
@@ -44,6 +46,8 @@ packer.startup({
     use('ahmedkhalf/project.nvim')
     -- tidy
     use('mcauley-penney/tidy.nvim')
+    -- dashboard
+    use('glepnir/dashboard-nvim')
     ----------------- lsp -----------------
     -- nvim-lspconfig
     use({ 'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer' })

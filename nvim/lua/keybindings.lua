@@ -138,6 +138,7 @@ map("n", "Z", ":foldopen<CR>", opt)
 -- nvim-tree
 map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
+map("n", "<leader>fb", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = { -- 打开文件或文件夹
   { key = { "o", "<2-LeftMouse>" }, action = "edit" },
@@ -186,7 +187,11 @@ map("n", "<leader>bp", ":BufferLinePickClose<CR>", opt)
 -- Telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 map("n", "<C-f>", ":Telescope live_grep<CR>", opt) -- 需要安装 ripgrep
+map("n", "<leader>ff", ":Telescope find_files<CR>", opt)
+map("n", "<leader>fw", ":Telescope live_grep<CR>", opt)
+map("n", "<leader>of", ":Telescope oldfiles<CR>", opt)
 map("n", "<leader>op", ":Telescope projects<CR>", opt)
+map("n", "<leader>od", ":Telescope dotfiles<CR>", opt)
 -- Telescope 列表中 插入模式快捷键
 pluginKeys.telescopeList = {
   i = {
