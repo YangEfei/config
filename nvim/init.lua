@@ -20,7 +20,6 @@ require('plugin-config.gitsigns')
 require('plugin-config.hlslens')
 require('plugin-config.illuminate')
 require('plugin-config.project')
-require('plugin-config.tidy')
 require('plugin-config.dashboard')
 
 -- 内置 lsp

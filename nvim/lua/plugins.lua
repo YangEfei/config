@@ -44,8 +44,6 @@ packer.startup({
     use('kylechui/nvim-surround')
     -- project
     use('ahmedkhalf/project.nvim')
-    -- tidy
-    use('mcauley-penney/tidy.nvim')
     -- dashboard
     use('glepnir/dashboard-nvim')
     ----------------- lsp -----------------

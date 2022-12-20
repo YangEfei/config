@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
+  ["dashboard-nvim"] = {
+    loaded = true,
+    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
+    url = "https://github.com/glepnir/dashboard-nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -219,10 +224,20 @@ _G.packer_plugins = {
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
+  ["telescope-dotfiles.nvim"] = {
+    loaded = true,
+    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/telescope-dotfiles.nvim",
+    url = "https://github.com/alex-laycalvert/telescope-dotfiles.nvim"
+  },
   ["telescope-env.nvim"] = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/telescope-env.nvim",
     url = "https://github.com/LinArcX/telescope-env.nvim"
+  },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,

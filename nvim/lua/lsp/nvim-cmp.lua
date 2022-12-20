@@ -37,7 +37,7 @@ cmp.setup {
   -- 快捷键
   mapping = require'keybindings'.cmp(cmp),
   -- 使用 lspkind-nvim 显示类型图标
-  formatting = { 
+  formatting = {
     format = lspkind.cmp_format({
       mode = "symbol_text",
       --mode = 'symbol', -- show only symbol annotations
@@ -51,13 +51,12 @@ cmp.setup {
         return vim_item
       end,
     }),
-  }, 
+  },
   sorting = {
     comparator = {
       cmp.config.compare.offset,
       cmp.config.compare.exact,
       cmp.config.compare.recently_used,
-      require("clangd_extensions.cmp_scores"),
       cmp.config.compare.kind,
       cmp.config.compare.sort_text,
       cmp.config.compare.length,
