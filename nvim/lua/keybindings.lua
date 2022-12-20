@@ -21,11 +21,11 @@ local map = vim.api.nvim_set_keymap
 -- 搜索高亮 hlslens
 local kopts = { noremap = true, silent = true }
 map('n', 'n',
-    [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
-    kopts)
+  [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+  kopts)
 map('n', 'N',
-    [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
-    kopts)
+  [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+  kopts)
 map('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
@@ -270,11 +270,11 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", "gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
   mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
   mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
-  mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
-  mapbuf("v", "<leader>f", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
+  mapbuf("n", "<A-f>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
+  mapbuf("v", "<A-f>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
   -- 未用
   -- mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
-  mapbuf("n", "gi", ":Telescope lsp_implementations<CR>",opt)
+  mapbuf("n", "gi", ":Telescope lsp_implementations<CR>", opt)
   mapbuf("n", "gs", ":Telescope lsp_document_symbols<CR>", opt)
   -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
   -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)

@@ -22,6 +22,11 @@ bufferline.setup {
       icon = '▎',
       style = 'icon'
     },
+    hover = {
+      enabled = true,
+      delay = 200,
+      reveal = { 'close' }
+    },
     buffer_close_icon = '',
     modified_icon = '●',
     close_icon = '',
@@ -42,9 +47,19 @@ bufferline.setup {
     diagnostics = "nvim_lsp",
     diagnostics_update_in_insert = false,
     -- The diagnostics indicator can be set to nil to keep the buffer name highlight but delete the highlighting
+    -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
+    --   return "("..count..")"
+    -- end,
     diagnostics_indicator = function(count, level, diagnostics_dict, context)
-      return "("..count..")"
+      local s = " "
+      for e, n in pairs(diagnostics_dict) do
+        local sym = e == "error" and " "
+            or (e == "warning" and " " or "")
+        s = s .. n .. sym
+      end
+      return s
     end,
+
     -- NOTE: this will be called a lot so don't do any heavy processing here
     custom_filter = function(buf_number, buf_numbers)
       -- filter out filetypes you don't want to see
@@ -88,6 +103,6 @@ bufferline.setup {
     -- [focused and unfocused]. eg: { '|', '|' }
     enforce_regular_tabs = false,
     always_show_bufferline = true,
-    sort_by = 'insert_after_current', 
+    sort_by = 'insert_after_current',
   }
 }
