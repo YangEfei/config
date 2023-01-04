@@ -16,6 +16,10 @@ lspsaga.init_lsp_saga({
   -- Error, Warn, Info, Hint
   -- diagnostic_header = { "😡", "😥", "😤", "😐" },
   diagnostic_header = { " ", " ", " ", "ﴞ " },
+  -- preview lines above of lsp_finder
+  preview_lines_above = 0,
+  -- preview lines of lsp_finder and definition preview
+  max_preview_lines = 10,
   -- code action title icon
   code_action_icon = "ﯦ ",
   -- if true can press number to execute the codeaction in codeaction window
@@ -23,7 +27,10 @@ lspsaga.init_lsp_saga({
   -- same as nvim-lightbulb but async
   code_action_lightbulb = {
     enable = true,
+    enable_in_insert = true,
+    cache_code_action = true,
     sign = true,
+    update_time = 150,
     sign_priority = 20,
     virtual_text = true,
   },
@@ -35,8 +42,10 @@ lspsaga.init_lsp_saga({
     ref = '諭 ',
     link = '  ',
   },
-  -- preview lines of lsp_finder and definition preview
-  max_preview_lines = 10,
+  -- finder do lsp request timeout
+  -- if your project is big enough or your server very slow
+  -- you may need to increase this value
+  finder_request_timeout = 1500,
   finder_action_keys = {
     -- open = "o",
     open = "<CR>",
@@ -53,9 +62,15 @@ lspsaga.init_lsp_saga({
     quit = "<ESC>",
     exec = "<CR>",
   },
+  definition_action_keys = {
+    edit = '<C-c>o',
+    vsplit = '<C-c>v',
+    split = '<C-c>i',
+    tabe = '<C-c>t',
+    quit = 'q',
+  },
   rename_action_quit = "<ESC>",
   rename_in_select = true,
-  server_filetype_map = {},
   -- show symbols in winbar must nightly
   symbol_in_winbar = {
     in_custom = false,
@@ -63,26 +78,26 @@ lspsaga.init_lsp_saga({
     separator = ' ',
     show_file = true,
     click_support = function(node, clicks, button, modifiers)
-        -- To see all avaiable details: vim.pretty_print(node)
-        local st = node.range.start
-        local en = node.range['end']
-        if button == "l" then
-            if clicks == 2 then
-                -- double left click to do nothing
-            else -- jump to node's starting line+char
-                vim.fn.cursor(st.line + 1, st.character + 1)
-            end
-        elseif button == "r" then
-            if modifiers == "s" then
-                print "lspsaga" -- shift right click to print "lspsaga"
-            end -- jump to node's ending line+char
-            vim.fn.cursor(en.line + 1, en.character + 1)
-        elseif button == "m" then
-            -- middle click to visual select node
-            vim.fn.cursor(st.line + 1, st.character + 1)
-            vim.cmd "normal v"
-            vim.fn.cursor(en.line + 1, en.character + 1)
+      -- To see all avaiable details: vim.pretty_print(node)
+      local st = node.range.start
+      local en = node.range['end']
+      if button == "l" then
+        if clicks == 2 then
+          -- double left click to do nothing
+        else -- jump to node's starting line+char
+          vim.fn.cursor(st.line + 1, st.character + 1)
         end
+      elseif button == "r" then
+        if modifiers == "s" then
+          print "lspsaga" -- shift right click to print "lspsaga"
+        end -- jump to node's ending line+char
+        vim.fn.cursor(en.line + 1, en.character + 1)
+      elseif button == "m" then
+        -- middle click to visual select node
+        vim.fn.cursor(st.line + 1, st.character + 1)
+        vim.cmd "normal v"
+        vim.fn.cursor(en.line + 1, en.character + 1)
+      end
     end,
   },
   -- show outline
@@ -98,4 +113,11 @@ lspsaga.init_lsp_saga({
     -- auto refresh when change buffer
     auto_refresh = true,
   },
+  -- custom lsp kind
+  -- usage { Field = 'color code'} or {Field = {your icon, your color code}}
+  custom_kind = {},
+  -- if you don't use nvim-lspconfig you must pass your server name and
+  -- the related filetypes into this table
+  -- like server_filetype_map = { metals = { "sbt", "scala" } }
+  server_filetype_map = {},
 })

@@ -1,6 +1,6 @@
 # change gcc version
 GCC_PATH=$HOME/.local/gcc-11.3.0
-export PATH=$GCC_PATH/bin/:$PATH
+PATH=$GCC_PATH/bin/:$PATH
 export LD_LIBRARY_PATH=$GCC_PATH/lib64/:$LD_LIBRARY_PATH
 export CXX=$GCC_PATH/bin/g++
 export CC=$GCC_PATH/bin/gcc
@@ -15,11 +15,18 @@ source $HOME/.bash_profile
 # ccls path
 # CCLS_PATH=$HOME/.local/share/nvim/lsp_servers/ccls/ccls/Release/
 CCLS_PATH=$HOME/.local/pha-all/arcanist/bin/
-export PATH=$PATH:$CCLS_PATH
+PATH=$PATH:$CCLS_PATH
+
+# go path
+GO_BIN=$HOME/.local/go-1.19.4/bin/
+GO_PATH=$HOME/.local/go/bin/
+PATH=$PATH:$GO_BIN:$GO_PATH
 
 # nvim path
 NVIM_PATH=$HOME/.local/nvim/bin/
-export PATH=$PATH:$NVIM_PATH
+PATH=$PATH:$NVIM_PATH
+
+export PATH
 
 # define global function for zsh
 fpath=(/etc/profile.d $fpath)

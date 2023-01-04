@@ -25,8 +25,10 @@ illuminate.configure({
   filetype_overrides = {},
   -- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
   filetypes_denylist = {
-    'dirvish',
-    'fugitive',
+    'dashboard',
+    'NvimTree',
+    'packer',
+    'lspsagafinder'
   },
   -- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist
   filetypes_allowlist = {},

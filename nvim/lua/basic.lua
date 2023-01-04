@@ -25,8 +25,10 @@ vim.bo.shiftwidth = 2
 vim.o.expandtab = true
 vim.bo.expandtab = true
 -- 新行对齐当前行
--- vim.o.autoindent = true
--- vim.bo.autoindent = true
+vim.o.autoindent = true
+vim.bo.autoindent = true
+vim.o.smartindent = true
+vim.bo.smartindent = true
 vim.o.cindent = true
 vim.bo.cindent = true
 -- vim.o.smartindent = true
@@ -59,7 +61,7 @@ vim.o.swapfile = false
 vim.o.updatetime = 300
 -- 设置 timeoutlen 为等待键盘快捷键连击时间500毫秒，可根据需要设置
 -- 遇到问题详见：https://github.com/nshen/learn-neovim-lua/issues/1
-vim.o.timeoutlen = 500
+-- vim.o.timeoutlen = 500
 -- split window 从下边和右边出现
 vim.o.splitbelow = true
 vim.o.splitright = true
@@ -84,3 +86,5 @@ vim.o.showtabline = 2
 vim.o.showmode = false
 -- 配置剪切板
 vim.opt.clipboard = "unnamedplus"
+-- 行末空格高亮
+vim.fn.matchadd('errorMsg', [[\s\+$]])

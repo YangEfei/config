@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -253,11 +258,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["tidy.nvim"] = {
-    loaded = true,
-    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/tidy.nvim",
-    url = "https://github.com/mcauley-penney/tidy.nvim"
   },
   ["vim-illuminate"] = {
     loaded = true,

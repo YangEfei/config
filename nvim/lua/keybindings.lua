@@ -30,7 +30,7 @@ map('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-map('n', '<Leader>l', ':noh<CR>', kopts)
+map('n', '<Leader>l', '<Cmd>noh<CR>', kopts)
 
 -- $跳到行尾不带空格 (交换$ 和 g_)
 map("v", "$", "g_", opt)
@@ -115,18 +115,21 @@ map("n", "<C-Up>", ":resize -2<CR>", opt)
 map("n", "s=", "<C-w>=", opt)
 
 -- Terminal相关
-map("n", "st", ":sp | terminal<CR>", opt)
-map("n", "stv", ":vsp | terminal<CR>", opt)
+-- map("n", "st", ":sp | terminal<CR>", opt)
+-- map("n", "stv", ":vsp | terminal<CR>", opt)
+map("n", "<A-t>", "<cmd>Lspsaga open_floaterm zsh<CR>", opt)
 -- Esc 回 Normal 模式
-map("t", "<Esc>", "<C-\\><C-n>", opt)
-map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)
-map("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opt)
-map("t", "<A-k>", [[ <C-\><C-N><C-w>k ]], opt)
-map("t", "<A-l>", [[ <C-\><C-N><C-w>l ]], opt)
-map("t", "<leader>h", [[ <C-\><C-N><C-w>h ]], opt)
-map("t", "<leader>j", [[ <C-\><C-N><C-w>j ]], opt)
-map("t", "<leader>k", [[ <C-\><C-N><C-w>k ]], opt)
-map("t", "<leader>l", [[ <C-\><C-N><C-w>l ]], opt)
+map("t", "<Esc>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], opt)
+-- map("t", "<Esc>", "<C-\\><C-n>", opt)
+-- map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)
+-- map("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opt)
+-- map("t", "<A-k>", [[ <C-\><C-N><C-w>k ]], opt)
+-- map("t", "<A-l>", [[ <C-\><C-N><C-w>l ]], opt)
+-- map("t", "<leader>h", [[ <C-\><C-N><C-w>h ]], opt)
+-- map("t", "<leader>j", [[ <C-\><C-N><C-w>j ]], opt)
+-- map("t", "<leader>k", [[ <C-\><C-N><C-w>k ]], opt)
+-- map("t", "<leader>l", [[ <C-\><C-N><C-w>l ]], opt)
+
 --------------------------------------------------------------------
 -- 插件快捷键
 local pluginKeys = {}
@@ -135,6 +138,8 @@ local pluginKeys = {}
 map("n", "zz", ":foldclose<CR>", opt)
 map("n", "Z", ":foldopen<CR>", opt)
 
+--diffview
+map("n", "<A-d>", ":DiffviewOpen<CR>", opt)
 -- nvim-tree
 map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
@@ -175,7 +180,7 @@ map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 -- "moll/vim-bbye" 关闭当前 buffer
 map("n", "<leader>bc", ":bdelete!<CR>", opt)
--- map("n", "<C-w>", ":bdelete!<CR>", opt)
+map("n", "<A-w>", ":bdelete!<CR>", opt)
 -- 关闭左/右侧标签页
 map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
@@ -268,8 +273,10 @@ pluginKeys.mapLSP = function(mapbuf)
   --]]
   -- diagnostic
   mapbuf("n", "gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+  mapbuf("n", "gp", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opt)
   mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
   mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
+  mapbuf("n", "<A-o>", "<cmd>Lspsaga outline<CR>", opt)
   mapbuf("n", "<A-f>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
   mapbuf("v", "<A-f>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
   -- 未用
@@ -351,19 +358,6 @@ pluginKeys.cmp = function(cmp)
     end, { "i", "s" }),
     -- end of super Tab
   }
-end
-
--- 自定义 toggleterm 3个不同类型的命令行窗口
--- <leader>ta 浮动
--- <leader>tb 右侧
--- <leader>tc 下方
--- 特殊lazygit 窗口，需要安装lazygit
--- <leader>tg lazygit
-pluginKeys.mapToggleTerm = function(toggleterm)
-  vim.keymap.set({ "n", "t" }, "<leader>ta", toggleterm.toggleA)
-  vim.keymap.set({ "n", "t" }, "<leader>tb", toggleterm.toggleB)
-  vim.keymap.set({ "n", "t" }, "<leader>tc", toggleterm.toggleC)
-  vim.keymap.set({ "n", "t" }, "<leader>tg", toggleterm.toggleG)
 end
 
 -- gitsigns

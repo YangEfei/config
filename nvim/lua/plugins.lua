@@ -37,6 +37,7 @@ packer.startup({
     use ('RRethy/vim-illuminate')
     -- git
     use('lewis6991/gitsigns.nvim')
+    use({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' })
     -- use('tpope/vim-fugitive')
     -- Comment
     use('numToStr/Comment.nvim')
