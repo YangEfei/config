@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
-  ["clangd_extensions.nvim"] = {
-    loaded = true,
-    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/clangd_extensions.nvim",
-    url = "https://github.com/p00f/clangd_extensions.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -129,15 +124,15 @@ _G.packer_plugins = {
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["git-messenger.vim"] = {
+    loaded = true,
+    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/git-messenger.vim",
+    url = "https://github.com/rhysd/git-messenger.vim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
-  ["gruvbox.nvim"] = {
-    loaded = true,
-    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
-    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -163,11 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  ["lush.nvim"] = {
-    loaded = true,
-    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/lush.nvim",
-    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["neodev.nvim"] = {
     loaded = true,
@@ -239,11 +229,6 @@ _G.packer_plugins = {
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/telescope-env.nvim",
     url = "https://github.com/LinArcX/telescope-env.nvim"
   },
-  ["telescope-file-browser.nvim"] = {
-    loaded = true,
-    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
-    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
-  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -259,20 +244,20 @@ _G.packer_plugins = {
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-illuminate"] = {
+  ["tokyonight.nvim"] = {
     loaded = true,
-    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/vim-illuminate",
-    url = "https://github.com/RRethy/vim-illuminate"
+    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-oscyank"] = {
+    loaded = true,
+    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/vim-oscyank",
+    url = "https://github.com/ojroques/vim-oscyank"
   },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
-  },
-  ["zephyr-nvim"] = {
-    loaded = true,
-    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/zephyr-nvim",
-    url = "https://github.com/glepnir/zephyr-nvim"
   }
 }
 

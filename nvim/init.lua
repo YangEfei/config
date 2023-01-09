@@ -5,6 +5,7 @@ require('plugins')
 -- 快捷键映射
 require('keybindings')
 -- 外观设置
+require('colorscheme-config.tokoynight')
 require('colorscheme')
 
 -- 插件配置
@@ -19,9 +20,10 @@ require('plugin-config.nvim-surround')
 require('plugin-config.gitsigns')
 require('plugin-config.diffview')
 require('plugin-config.hlslens')
-require('plugin-config.illuminate')
+-- require('plugin-config.illuminate')
 require('plugin-config.project')
 require('plugin-config.dashboard')
+require('plugin-config.oscyank')
 
 -- 内置 lsp
 require('lsp.setup')

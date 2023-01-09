@@ -38,6 +38,14 @@ map("v", "g_", "$", opt)
 map("n", "$", "g_", opt)
 map("n", "g_", "$", opt)
 
+-- 全局复制指令
+-- map("v", "<A-c>", "\"*y", opt)
+-- map("n", "<A-v>", "\"*p", opt)
+-- map("i", "<A-v>", "\"*p", opt)
+-- vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, {expr = true})
+-- vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
+-- vim.keymap.set('x', '<leader>c', require('osc52').copy_visual)
+
 -- 命令行下 Ctrl+j/k  上一个下一个
 map("c", "<C-j>", "<C-n>", { noremap = false })
 map("c", "<C-k>", "<C-p>", { noremap = false })
@@ -74,7 +82,7 @@ map("v", "p", '"_dP', opt)
 
 -- 退出
 map("n", "qq", ":q!<CR>", opt)
-map("n", "<leader>q", ":qa!<CR>", opt)
+map("n", "<A>q", ":qa!<CR>", opt)
 
 -- insert 模式下，跳到行首行尾
 -- map("i", "<C-h>", "<ESC>I", opt)
