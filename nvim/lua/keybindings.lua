@@ -1,4 +1,4 @@
--- Modes
+-- Modeskey
 -- normal_mode = "n",
 -- insert_mode = "i",
 -- visual_mode = "v",
@@ -37,14 +37,6 @@ map("v", "$", "g_", opt)
 map("v", "g_", "$", opt)
 map("n", "$", "g_", opt)
 map("n", "g_", "$", opt)
-
--- 全局复制指令
--- map("v", "<A-c>", "\"*y", opt)
--- map("n", "<A-v>", "\"*p", opt)
--- map("i", "<A-v>", "\"*p", opt)
--- vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, {expr = true})
--- vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
--- vim.keymap.set('x', '<leader>c', require('osc52').copy_visual)
 
 -- 命令行下 Ctrl+j/k  上一个下一个
 map("c", "<C-j>", "<C-n>", { noremap = false })
@@ -125,9 +117,9 @@ map("n", "s=", "<C-w>=", opt)
 -- Terminal相关
 -- map("n", "st", ":sp | terminal<CR>", opt)
 -- map("n", "stv", ":vsp | terminal<CR>", opt)
-map("n", "<A-t>", "<cmd>Lspsaga open_floaterm zsh<CR>", opt)
+map("n", "<A-t>", "<cmd>Lspsaga term_toggle zsh<CR>", opt)
+map("t", "<A-t>", "<cmd>Lspsaga term_toggle<CR>]]", opt)
 -- Esc 回 Normal 模式
-map("t", "<Esc>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], opt)
 -- map("t", "<Esc>", "<C-\\><C-n>", opt)
 -- map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)
 -- map("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opt)
@@ -241,7 +233,7 @@ pluginKeys.comment = {
 }
 -- ctrl + /
 map("n", "<C-_>", "gcc", { noremap = false })
-map("v", "<C-_>", "gcc", { noremap = false })
+map("v", "<C-_>", "gc", { noremap = false })
 
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
@@ -280,8 +272,9 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
   --]]
   -- diagnostic
-  mapbuf("n", "gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
-  mapbuf("n", "gp", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opt)
+  mapbuf("n", "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+  mapbuf("n", "<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opt)
+  mapbuf("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>", opt)
   mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
   mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
   mapbuf("n", "<A-o>", "<cmd>Lspsaga outline<CR>", opt)

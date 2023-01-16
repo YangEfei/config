@@ -15,6 +15,7 @@ source $HOME/.bash_profile
 # xclip path
 XCLIP_PATH=$HOME/.local/xclip/bin/
 PATH=$PATH:$XCLIP_PATH
+
 # ccls path
 # CCLS_PATH=$HOME/.local/share/nvim/lsp_servers/ccls/ccls/Release/
 CCLS_PATH=$HOME/.local/pha-all/arcanist/bin/
@@ -26,7 +27,7 @@ GO_PATH=$HOME/.local/go/bin/
 PATH=$PATH:$GO_BIN:$GO_PATH
 
 # nvim path
-NVIM_PATH=$HOME/.local/nvim/bin/
+NVIM_PATH=$HOME/.local/nvim-0.8.2/bin/
 PATH=$PATH:$NVIM_PATH
 
 export PATH

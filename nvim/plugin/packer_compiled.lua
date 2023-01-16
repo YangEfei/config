@@ -184,6 +184,11 @@ _G.packer_plugins = {
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-osc52"] = {
+    loaded = true,
+    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/nvim-osc52",
+    url = "https://github.com/ojroques/nvim-osc52"
+  },
   ["nvim-surround"] = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/nvim-surround",
@@ -248,11 +253,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
-  },
-  ["vim-oscyank"] = {
-    loaded = true,
-    path = "/home/yangyifei.yyf/.local/share/nvim/site/pack/packer/start/vim-oscyank",
-    url = "https://github.com/ojroques/vim-oscyank"
   },
   ["vim-vsnip"] = {
     loaded = true,

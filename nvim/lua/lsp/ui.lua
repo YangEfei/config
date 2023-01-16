@@ -1,5 +1,11 @@
-local lspsaga = require("lspsaga")
-lspsaga.init_lsp_saga({
+local status, lspsaga = pcall(require, "lspsaga")
+if not status then
+  vim.notify("没有找到 lspsaga")
+  return
+end
+
+lspsaga.setup({})
+--[[ lspsaga.init_lsp_saga({
   -- Options with default value
   -- "single" | "double" | "rounded" | "bold" | "plus"
   border_style = "single",
@@ -120,4 +126,4 @@ lspsaga.init_lsp_saga({
   -- the related filetypes into this table
   -- like server_filetype_map = { metals = { "sbt", "scala" } }
   server_filetype_map = {},
-})
+}) ]]
