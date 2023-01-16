@@ -4,7 +4,42 @@ if not status then
   return
 end
 
-lspsaga.setup({})
+lspsaga.setup({
+  finder = {
+    edit = { 'o', '<CR>' },
+    vsplit = 'v',
+    split = 's',
+    tabe = 't',
+    quit = { 'q', '<ESC>' },
+  },
+  definition = {
+    edit = '<C-c>o',
+    vsplit = '<C-c>v',
+    split = '<C-c>s',
+    tabe = '<C-c>t',
+    quit = 'q',
+    close = '<Esc>',
+  },
+  diagnostic = {
+    twice_into = true,
+    show_code_action = true,
+    show_source = true,
+    keys = {
+      exec_action = '<CR>',
+      quit = 'q',
+      go_action = 'g'
+    },
+  },
+  symbol_in_winbar = {
+    enable = true,
+    separator = ' ',
+    hide_keyword = true,
+    show_file = true,
+    folder_level = 2,
+    respect_root = true,
+    color_mode = true,
+  },
+})
 --[[ lspsaga.init_lsp_saga({
   -- Options with default value
   -- "single" | "double" | "rounded" | "bold" | "plus"

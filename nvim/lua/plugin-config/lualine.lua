@@ -34,7 +34,7 @@ local config = {
       {
         'filename',
         file_status = true,
-        path = 1
+        path = 0
       }
     },
     lualine_x = {'encoding', 'fileformat', 'filetype'},

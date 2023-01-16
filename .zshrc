@@ -27,7 +27,7 @@ GO_PATH=$HOME/.local/go/bin/
 PATH=$PATH:$GO_BIN:$GO_PATH
 
 # nvim path
-NVIM_PATH=$HOME/.local/nvim-0.8.2/bin/
+NVIM_PATH=$HOME/.local/nvim-0.9.0/bin/
 PATH=$PATH:$NVIM_PATH
 
 export PATH
