@@ -49,7 +49,11 @@ packer.startup({
     -- project
     use('ahmedkhalf/project.nvim')
     -- dashboard
-    use('glepnir/dashboard-nvim')
+    use({
+      'glepnir/dashboard-nvim',
+      event = 'VimEnter',
+      requires = { 'nvim-tree/nvim-web-devicons' }
+    })
     -- oscyank
     use ('ojroques/nvim-osc52')
     ----------------- lsp -----------------
