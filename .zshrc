@@ -12,6 +12,14 @@ alias shopt=$HOME/.local/bin/shopt
 alias complete=$HOME/.local/bin/complete
 source $HOME/.bash_profile
 
+# sumneko path
+SUMNEKO_PATH=$HOME/.local/share/nvim.bak/lsp_servers/sumneko_lua/extension/server/bin/
+PATH=$PATH:$SUMNEKO_PATH
+
+# node path
+NODE_PATH=/opt/taobao/install/node-v14.19.3/bin/
+PATH=$PATH:$NODE_PATH
+
 # xclip path
 XCLIP_PATH=$HOME/.local/xclip/bin/
 PATH=$PATH:$XCLIP_PATH

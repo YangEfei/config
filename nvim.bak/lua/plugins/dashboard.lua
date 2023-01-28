@@ -25,7 +25,7 @@ db.setup({
         key = 'p',
       },
       {
-        desc = ' dotfiles',
+        desc = ' Dotfiles',
         group = 'Number',
         action = 'Telescope dotfiles',
         key = 'd',

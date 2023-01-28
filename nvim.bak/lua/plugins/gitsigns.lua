@@ -58,5 +58,5 @@ gitsigns.setup({
   yadm = {
     enable = false,
   },
-  on_attach = require("keybindings").gitsigns_on_attach,
+  on_attach = require("config.keymap").gitsigns_on_attach,
 })

@@ -75,4 +75,4 @@ local default_opts = {
 }
 
 -- 关闭了 extra 快捷键，只用 keybindings 里定义的基础快捷键
-comment.setup(vim.tbl_deep_extend("force", default_opts, require("keybindings").comment))
+comment.setup(vim.tbl_deep_extend("force", default_opts, require("config.keymap").comment))
