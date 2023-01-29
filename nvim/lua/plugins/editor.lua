@@ -30,8 +30,8 @@ return {
       }
 
       -- Now the '+' register will copy to system clipboard using OSC52
-      vim.keymap.set("n", "<leader>c", '"+y')
-      vim.keymap.set("n", "<leader>cc", '"+yy')
+      vim.keymap.set("n", "<A-c>", '"+y')
+      vim.keymap.set("n", "<A-c>c", '"+yy')
     end,
   },
 }
