@@ -30,10 +30,11 @@ return {
       }
 
       -- Now the '+' register will copy to system clipboard using OSC52
-      vim.keymap.set("n", "<A-c>", '"+y')
-      vim.keymap.set("n", "<A-c>c", '"+yy')
+      -- vim.keymap.set("n", "<A-c>", '"+y')
+      -- vim.keymap.set("n", "<A-c>c", '"+yy')
     end,
   },
+  -- moidfy gitsigns
   {
     "lewis6991/gitsigns.nvim",
     opts = {
@@ -59,9 +60,13 @@ return {
         map("n", "<leader>gu", gs.undo_stage_hunk, "Undo Stage Hunk")
         map("n", "<leader>gR", gs.reset_buffer, "Reset Buffer")
         map("n", "<leader>gp", gs.preview_hunk, "Preview Hunk")
-        map("n", "<leader>gb", function() gs.blame_line({ full = true }) end, "Blame Line")
+        map("n", "<leader>gb", function()
+          gs.blame_line({ full = true })
+        end, "Blame Line")
         map("n", "<leader>gd", gs.diffthis, "Diff This")
-        map("n", "<leader>gD", function() gs.diffthis("~") end, "Diff This ~")
+        map("n", "<leader>gD", function()
+          gs.diffthis("~")
+        end, "Diff This ~")
         map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
         map("n", "<leader>gt", function()
           gs.toggle_current_line_blame()
