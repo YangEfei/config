@@ -1,8 +1,8 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    autoformat = false,
     opts = {
+      autoformat = false,
       servers = {
         sumneko_lua = {
           mason = false,
@@ -13,6 +13,8 @@ return {
       },
     },
   },
+
+  --[[
   -- add lspsaga
   {
     "glepnir/lspsaga.nvim",
@@ -50,6 +52,7 @@ return {
       { "<A-t>", "<cmd>Lspsaga term_toggle zsh<cr>", mode = { "n", "t" }, desc = "Float terminal" },
     },
   },
+  --]]
 
   -- Use <tab> for completion and snippets (supertab)
   -- first: disable default <tab> and <s-tab> behavior in LuaSnip
