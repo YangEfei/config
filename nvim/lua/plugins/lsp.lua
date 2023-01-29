@@ -5,14 +5,15 @@ return {
     opts = {
       servers = {
         sumneko_lua = {
-          mason = false
+          mason = false,
         },
         ccls = {
-          mason = false
-        }
-      }
-    }
+          mason = false,
+        },
+      },
+    },
   },
+  -- add lspsaga
   {
     "glepnir/lspsaga.nvim",
     event = "BufRead",
@@ -27,55 +28,80 @@ return {
       { "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<cr>", desc = "Show line diagnostics" },
       { "<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<cr>", desc = "Show cursor diagnostics" },
       { "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<cr>", desc = "Show buffer diagnostics" },
-      { "[e", "<cmd>Lspsaga diagnostic_jump_prev<cr>", desc = "Jump to previous diagnostics" },
-      { "]e", "<cmd>Lspsaga diagnostic_jump_next<cr>", desc = "Jump to next diagnostics" },
-      { "[E", function()
-        require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
-      end, desc = "Jump to previous error" },
-      { "]E", function()
-        require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
-      end, desc = "Jump to next error" },
-      { "K", "<cmd>Lspsaga hover_doc<cr>", desc = "Hover doc" },
+      -- { "[e", "<cmd>Lspsaga diagnostic_jump_prev<cr>", desc = "Jump to previous diagnostics" },
+      -- { "]e", "<cmd>Lspsaga diagnostic_jump_next<cr>", desc = "Jump to next diagnostics" },
+      -- {
+      --   "[E",
+      --   function()
+      --     require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+      --   end,
+      --   desc = "Jump to previous error",
+      -- },
+      -- {
+      --   "]E",
+      --   function()
+      --     require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+      --   end,
+      --   desc = "Jump to next error",
+      -- },
+      -- { "K", "<cmd>Lspsaga hover_doc<cr>", desc = "Hover doc" },
       { "<Leader>ci", "<cmd>Lspsaga incoming_calls<cr>", desc = "Incoming calls" },
       { "<Leader>co", "<cmd>Lspsaga outgoing_calls<cr>", desc = "Outgoing calss" },
-      { "<A-t>", "<cmd>Lspsaga term_toggle zsh<cr>", mode = { "n", "t" }, desc = "Float terminal" }
-    }
+      { "<A-t>", "<cmd>Lspsaga term_toggle zsh<cr>", mode = { "n", "t" }, desc = "Float terminal" },
+    },
   },
+
+  -- Use <tab> for completion and snippets (supertab)
+  -- first: disable default <tab> and <s-tab> behavior in LuaSnip
+  {
+    "L3MON4D3/LuaSnip",
+    keys = function()
+      return {}
+    end,
+  },
+  -- then: setup supertab in cmp
   {
     "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-emoji",
+    },
+    ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
-      local cmp = require("cmp")
-      local feedkey = function(key, mode)
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
-      end
       local has_words_before = function()
+        unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
         return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
       end
-      opts.mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-c>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        ["<C-k>"] = cmp.mapping.select_prev_item(),
+
+      local luasnip = require("luasnip")
+      local cmp = require("cmp")
+
+      opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<C-j>"] = cmp.mapping.select_next_item(),
-        -- super Tab
-        ["<Tab>"] = cmp.mapping(function()
+        ["<C-k>"] = cmp.mapping.select_prev_item(),
+        ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
+            -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+            -- they way you will only jump inside the snippet region
+          elseif luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
           elseif has_words_before() then
             cmp.complete()
+          else
+            fallback()
           end
         end, { "i", "s" }),
-
-        ["<S-Tab>"] = cmp.mapping(function()
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
+          elseif luasnip.jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
           end
         end, { "i", "s" }),
-        -- end of super Tab
       })
-    end
-  }
+    end,
+  },
 }
