@@ -12,31 +12,54 @@ alias shopt=$HOME/.local/bin/shopt
 alias complete=$HOME/.local/bin/complete
 source $HOME/.bash_profile
 
-# sumneko path
-SUMNEKO_PATH=$HOME/.local/share/nvim.bak/lsp_servers/sumneko_lua/extension/server/bin/
-PATH=$PATH:$SUMNEKO_PATH
-
-# node path
-NODE_PATH=/opt/taobao/install/node-v14.19.3/bin/
-PATH=$PATH:$NODE_PATH
+### tools
+# wget path
+WGET_PATH=$HOME/.local/wget-1.21/bin/
+PATH=$WGET_PATH:$PATH
 
 # xclip path
 XCLIP_PATH=$HOME/.local/xclip/bin/
 PATH=$PATH:$XCLIP_PATH
 
-# ccls path
-# CCLS_PATH=$HOME/.local/share/nvim/lsp_servers/ccls/ccls/Release/
-CCLS_PATH=$HOME/.local/pha-all/arcanist/bin/
-PATH=$PATH:$CCLS_PATH
+# nvim path
+NVIM_PATH=$HOME/.local/nvim-0.9.0/bin/
+PATH=$PATH:$NVIM_PATH
+
+# bear path
+BEAR_PATH=$HOME/.local/bear-3.0.21/bin/
+PATH=$PATH:$BEAR_PATH
+
+#grpc lib
+GRPC_LIB_PATH=$HOME/.local/grpc/lib64/:$HOME/.local/grpc/cmake/build/
+export LD_LIBRARY_PATH=$GRPC_LIB_PATH:$LD_LIBRARY_PATH
+
+# openssl path
+# OPENSSL_PATH=$HOME/.local/openssl-3.0.7/bin/
+# PATH=$OPENSSL_PATH:$PATH
+
+### languages
+# python path
+# PYTHON_PATH=$HOME/.local/python-3.11.1/bin/
+# PATH=$PYTHON_PATH:$PATH
+
+# node path
+NODE_PATH=/opt/taobao/install/node-v14.19.3/bin/
+PATH=$PATH:$NODE_PATH
 
 # go path
 GO_BIN=$HOME/.local/go-1.19.4/bin/
 GO_PATH=$HOME/.local/go/bin/
 PATH=$PATH:$GO_BIN:$GO_PATH
 
-# nvim path
-NVIM_PATH=$HOME/.local/nvim-0.9.0/bin/
-PATH=$PATH:$NVIM_PATH
+### lsp
+# ccls path
+# CCLS_PATH=$HOME/.local/share/nvim/lsp_servers/ccls/ccls/Release/
+CCLS_PATH=$HOME/.local/pha-all/arcanist/bin/
+PATH=$PATH:$CCLS_PATH
+
+# sumneko path
+# SUMNEKO_PATH=$HOME/.local/share/nvim.bak/lsp_servers/sumneko_lua/extension/server/bin/
+# PATH=$PATH:$SUMNEKO_PATH
 
 export PATH
 

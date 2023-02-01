@@ -1,17 +1,33 @@
 return {
+  -- add ccls to lsp
   {
     "neovim/nvim-lspconfig",
     opts = {
       autoformat = false,
       servers = {
-        sumneko_lua = {
-          mason = false,
-        },
         ccls = {
           mason = false,
         },
       },
     },
+  },
+  -- add formatter and diagnostics for c/cpp
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    opts = function(_, opts)
+      local nls = require("null-ls")
+      return {
+        on_init = function(new_client, _)
+          new_client.offset_encoding = 'utf-32'
+        end,
+        sources = vim.list_extend(opts.sources, {
+          nls.builtins.formatting.clang_format,
+          nls.builtins.diagnostics.cpplint,
+          nls.builtins.formatting.shfmt,
+          nls.builtins.diagnostics.shellcheck,
+        }),
+      }
+    end,
   },
 
   --[[
