@@ -11,6 +11,25 @@ return {
     },
   },
 
+  -- modify telescope keymaps
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        mappings = {
+          i = {
+            ["<Down>"] = function(...)
+              return require("telescope.actions").cycle_history_next(...)
+            end,
+            ["<Up>"] = function(...)
+              return require("telescope.actions").cycle_history_prev(...)
+            end,
+          },
+        },
+      },
+    },
+  },
+
   -- add ocsyank
   {
     "ojroques/nvim-osc52",
