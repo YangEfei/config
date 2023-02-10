@@ -3,14 +3,45 @@ return {
   {
     "telescope.nvim",
     dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+        config = function()
+          require("telescope").load_extension("fzf")
+        end,
+      },
     },
   },
-
+  -- modify which-key register map
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      plugins = { spelling = true },
+    },
+    config = function(_, opts)
+      local wk = require("which-key")
+      wk.setup(opts)
+      wk.register({
+        mode = { "n", "v" },
+        ["g"] = { name = "+goto" },
+        ["]"] = { name = "+next" },
+        ["["] = { name = "+prev" },
+        ["<leader><tab>"] = { name = "+tabs" },
+        ["<leader>b"] = { name = "+buffer" },
+        ["<leader>c"] = { name = "+code" },
+        ["<leader>f"] = { name = "+file/find" },
+        ["<leader>g"] = { name = "+git" },
+        ["<leader>q"] = { name = "+quit/session" },
+        ["<leader>s"] = { name = "+search" },
+        ["<leader>y"] = { name = "+surround" },
+        ["<leader>sn"] = { name = "+noice" },
+        ["<leader>u"] = { name = "+ui" },
+        ["<leader>w"] = { name = "+windows" },
+        ["<leader>x"] = { name = "+diagnostics/quickfix" },
+      })
+    end,
+  },
   -- modify telescope keymaps
   {
     "nvim-telescope/telescope.nvim",
@@ -53,6 +84,16 @@ return {
       -- vim.keymap.set("n", "<A-c>c", '"+yy')
     end,
   },
+
+  -- add git-messenger
+  {
+    "rhysd/git-messenger.vim",
+    event = "BufReadPre",
+    keys = {
+      { "<leader>gm", "<cmd>GitMessenger<cr>", desc = "Blame line history" },
+    },
+  },
+
   -- moidfy gitsigns
   {
     "lewis6991/gitsigns.nvim",
