@@ -12,8 +12,8 @@ return {
     "kylechui/nvim-surround",
     opts = {
       keymaps = {
-        insert = "<leader>ys",
-        insert_line = "<leader>yS",
+        insert = false,
+        insert_line = false,
         normal = "<leader>ys",
         normal_cur = "<leader>yss",
         normal_cur_line = "<leader>ySS",

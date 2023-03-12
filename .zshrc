@@ -10,6 +10,7 @@ autoload -U +X compinit && compinit
 
 alias shopt=$HOME/.local/bin/shopt
 alias complete=$HOME/.local/bin/complete
+alias of='ob flow'
 source $HOME/.bash_profile
 
 ### tools

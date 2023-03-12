@@ -29,4 +29,14 @@ return {
       })
     end,
   },
+  {
+    "glepnir/flybuf.nvim",
+    cmd = "FlyBuf",
+    keys = {
+      { "<leader>bf", "<cmd>FlyBuf<cr>", desc = "Fly to Buffer" }
+    },
+    config = function()
+      require("flybuf").setup({})
+    end,
+  }
 }
