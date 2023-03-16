@@ -8,9 +8,14 @@ export CC=$GCC_PATH/bin/gcc
 # git completion
 autoload -U +X compinit && compinit
 
+# alias
 alias shopt=$HOME/.local/bin/shopt
 alias complete=$HOME/.local/bin/complete
 alias of='ob flow'
+alias ta='tmux attach'
+alias tl='tmux ls'
+alias tn='tmux new'
+
 source $HOME/.bash_profile
 
 ### tools
@@ -26,13 +31,21 @@ PATH=$PATH:$XCLIP_PATH
 NVIM_PATH=$HOME/.local/nvim-0.9.0/bin/
 PATH=$PATH:$NVIM_PATH
 
+#tmux path
+TMUX_PATH=$HOME/.local/tmux/bin/
+PATH=$TMUX_PATH:$PATH
+
 # bear path
 BEAR_PATH=$HOME/.local/bear-3.0.21/bin/
 PATH=$PATH:$BEAR_PATH
 
+### lib
 #grpc lib
 GRPC_LIB_PATH=$HOME/.local/grpc/lib64/:$HOME/.local/grpc/cmake/build/
-export LD_LIBRARY_PATH=$GRPC_LIB_PATH:$LD_LIBRARY_PATH
+LD_LIBRARY_PATH=$GRPC_LIB_PATH:$LD_LIBRARY_PATH
+
+LIBEVENT_LIB_PATH=$HOME/.local/libevent/lib/
+LD_LIBRARY_PATH=$LIBEVENT_LIB_PATH:$LD_LIBRARY_PATH
 
 # openssl path
 # OPENSSL_PATH=$HOME/.local/openssl-3.0.7/bin/
@@ -63,13 +76,17 @@ PATH=$PATH:$CCLS_PATH
 # PATH=$PATH:$SUMNEKO_PATH
 
 export PATH
+export LD_LIBRARY_PATH
 
 # define global function for zsh
 fpath=(/etc/profile.d $fpath)
 autoload -Uz dep_create
 
 # Used for rainbow style in p10k
-export TERM=xterm-256color
+# and correct color in tmux
+TERM="xterm-256color"
+[[ -n $TMUX ]] && TERM="screen-256color"
+export TERM
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
