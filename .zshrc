@@ -12,9 +12,6 @@ autoload -U +X compinit && compinit
 alias shopt=$HOME/.local/bin/shopt
 alias complete=$HOME/.local/bin/complete
 alias of='ob flow'
-alias ta='tmux attach'
-alias tl='tmux ls'
-alias tn='tmux new'
 
 source $HOME/.bash_profile
 
@@ -85,8 +82,12 @@ autoload -Uz dep_create
 # Used for rainbow style in p10k
 # and correct color in tmux
 TERM="xterm-256color"
-[[ -n $TMUX ]] && TERM="screen-256color"
+# [[ -n $TMUX ]] && TERM="screen-256color"
 export TERM
+
+# if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
+#   tmux attach-session -t main || tmux new-session -s main
+# fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
