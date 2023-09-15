@@ -6,7 +6,10 @@ export CXX=$GCC_PATH/bin/g++
 export CC=$GCC_PATH/bin/gcc
 
 # git completion
-autoload -U +X compinit && compinit
+zstyle ':completion:*:*:git:*' script ~/.zsh/functions/git-completion.bash
+# `compinit` scans $fpath, so do this before calling it.
+fpath=(~/.zsh/functions $fpath)
+autoload -Uz compinit && compinit
 
 # alias
 alias shopt=$HOME/.local/bin/shopt
@@ -25,7 +28,7 @@ XCLIP_PATH=$HOME/.local/xclip/bin/
 PATH=$PATH:$XCLIP_PATH
 
 # nvim path
-NVIM_PATH=$HOME/.local/nvim-0.9.0/bin/
+NVIM_PATH=$HOME/.local/nvim-0.10.0/bin/
 PATH=$PATH:$NVIM_PATH
 
 #tmux path

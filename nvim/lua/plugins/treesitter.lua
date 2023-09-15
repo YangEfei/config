@@ -8,7 +8,6 @@ return {
       },
       ensure_installed = {
         "bash",
-        "help",
         "json",
         "lua",
         "markdown",
@@ -17,6 +16,7 @@ return {
         "regex",
         "vim",
         "yaml",
+        "vimdoc",
         "c",
         "cpp",
       },

@@ -30,6 +30,7 @@ return {
           -- nls.builtins.diagnostics.cppcheck,
           -- nls.builtins.diagnostics.cpplint,
           nls.builtins.formatting.shfmt,
+          nls.builtins.formatting.stylua,
           nls.builtins.diagnostics.shellcheck,
         }),
       }
