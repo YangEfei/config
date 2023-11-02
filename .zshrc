@@ -1,10 +1,10 @@
 # change gcc version
-GCC_PATH=$HOME/.local/gcc-11.3.0
-PATH=$GCC_PATH/bin/:$PATH
-export LD_LIBRARY_PATH=$GCC_PATH/lib64/:$LD_LIBRARY_PATH
-export CXX=$GCC_PATH/bin/g++
-export CC=$GCC_PATH/bin/gcc
-
+# GCC_PATH=$HOME/.local/gcc-11.3.0
+# PATH=$GCC_PATH/bin/:$PATH
+# export LD_LIBRARY_PATH=$GCC_PATH/lib64/:$LD_LIBRARY_PATH
+# export CXX=$GCC_PATH/bin/g++
+# export CC=$GCC_PATH/bin/gcc
+#
 # git completion
 zstyle ':completion:*:*:git:*' script ~/.zsh/functions/git-completion.bash
 # `compinit` scans $fpath, so do this before calling it.

@@ -2,15 +2,13 @@ return {
   -- add telescope-fzf-native
   {
     "telescope.nvim",
-    dependencies = {
-      {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make",
-        config = function()
-          require("telescope").load_extension("fzf")
-        end,
-      },
-    },
+    opts = function()
+      return {
+        defaults = {
+          dynamic_preview_title = true,
+        }
+      }
+    end
   },
   -- modify which-key register map
   {

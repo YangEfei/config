@@ -11,30 +11,44 @@ return {
       },
     },
   },
+
   -- add formatter and diagnostics for c/cpp
+  -- {
+  --   "nvimtools/none-ls.nvim",
+  --   opts = function(_, opts)
+  --     local nls = require("null-ls")
+  --     return {
+  --       on_init = function(new_client, _)
+  --         new_client.offset_encoding = "utf-32"
+  --       end,
+  --       debug = true,
+  --       sources = vim.list_extend(opts.sources or {}, {
+  --         nls.builtins.formatting.clang_format.with({
+  --           extra_args = {
+  --             "-style=file:" .. vim.fn.expand("$HOME/.config/.clang_format"),
+  --           },
+  --         }),
+  --       }),
+  --     }
+  --   end,
+  -- },
+
   {
-    "nvimtools/none-ls.nvim",
-    opts = function(_, opts)
-      local nls = require("null-ls")
-      return {
-        on_init = function(new_client, _)
-          new_client.offset_encoding = "utf-32"
-        end,
-        debug = true,
-        sources = vim.list_extend(opts.sources or {}, {
-          nls.builtins.formatting.clang_format.with({
-            extra_args = {
-              "-style=file:" .. vim.fn.expand("$HOME/.config/.clang_format"),
-            },
-          }),
-          -- nls.builtins.diagnostics.cppcheck,
-          -- nls.builtins.diagnostics.cpplint,
-          nls.builtins.formatting.shfmt,
-          nls.builtins.formatting.stylua,
-          nls.builtins.diagnostics.shellcheck,
-        }),
-      }
-    end,
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        json = { "fixjson" },
+        lua = { "stylua" },
+        cpp = { "clang_format" },
+      },
+      formatters = {
+        clang_format = {
+          prepend_args = {
+            "-style=file:" .. vim.fn.expand("$HOME/.config/.clang_format"),
+          },
+        },
+      },
+    },
   },
 
   --[[
