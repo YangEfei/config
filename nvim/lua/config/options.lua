@@ -4,3 +4,5 @@
 --
 -- Python provider
 vim.g.python3_host_prog = "/home/yangyifei.yyf/.local/python-3.7.16/bin/python3"
+vim.g.autoformat = false
+vim.opt.clipboard = 'unnamedplus'

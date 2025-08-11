@@ -28,7 +28,7 @@ XCLIP_PATH=$HOME/.local/xclip/bin/
 PATH=$PATH:$XCLIP_PATH
 
 # nvim path
-NVIM_PATH=$HOME/.local/nvim-0.10.0/bin/
+NVIM_PATH=$HOME/.local/nvim-0.11.2/bin/
 PATH=$PATH:$NVIM_PATH
 
 #tmux path
@@ -38,6 +38,10 @@ PATH=$TMUX_PATH:$PATH
 # bear path
 BEAR_PATH=$HOME/.local/bear-3.0.21/bin/
 PATH=$PATH:$BEAR_PATH
+
+# luarocks path
+LUAROCKS_PATH=$HOME/.local/luarocks-3.11.1/bin/
+PATH=$PATH:$LUAROCKS_PATH
 
 ### lib
 #grpc lib
@@ -74,6 +78,14 @@ PATH=$PATH:$CCLS_PATH
 # sumneko path
 # SUMNEKO_PATH=$HOME/.local/share/nvim.bak/lsp_servers/sumneko_lua/extension/server/bin/
 # PATH=$PATH:$SUMNEKO_PATH
+
+# work_for_me
+WORK_FOR_ME_PATH=$HOME/.local/work_for_me/
+PATH=$PATH:$WORK_FOR_ME_PATH
+
+# libc
+# LIBC_LIB_PATH=$HOME/.local/glibc-2.25/lib/
+# LD_LIBRARY_PATH=$LIBC_LIB_PATH:$LD_LIBRARY_PATH
 
 export PATH
 export LD_LIBRARY_PATH
@@ -207,3 +219,5 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

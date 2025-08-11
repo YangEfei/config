@@ -6,9 +6,17 @@ return {
       return {
         defaults = {
           dynamic_preview_title = true,
-        }
+        },
       }
-    end
+    end,
+  },
+  {
+    "fzf-lua",
+    opts = {
+      fzf_opts = {
+        ["--history"] = vim.fn.stdpath("data") .. "/fzf-lua-history",
+      },
+    },
   },
   -- modify which-key register map
   {
@@ -20,23 +28,8 @@ return {
     config = function(_, opts)
       local wk = require("which-key")
       wk.setup(opts)
-      wk.register({
-        mode = { "n", "v" },
-        ["g"] = { name = "+goto" },
-        ["]"] = { name = "+next" },
-        ["["] = { name = "+prev" },
-        ["<leader><tab>"] = { name = "+tabs" },
-        ["<leader>b"] = { name = "+buffer" },
-        ["<leader>c"] = { name = "+code" },
-        ["<leader>f"] = { name = "+file/find" },
-        ["<leader>g"] = { name = "+git" },
-        ["<leader>q"] = { name = "+quit/session" },
-        ["<leader>s"] = { name = "+search" },
-        ["<leader>y"] = { name = "+surround" },
-        ["<leader>sn"] = { name = "+noice" },
-        ["<leader>u"] = { name = "+ui" },
-        ["<leader>w"] = { name = "+windows" },
-        ["<leader>x"] = { name = "+diagnostics/quickfix" },
+      wk.add({
+        { "<leader>y", group = "surround" }, -- group
       })
     end,
   },
@@ -59,30 +52,6 @@ return {
     },
   },
 
-  -- add ocsyank
-  {
-    "ojroques/nvim-osc52",
-    opts = function()
-      local function copy(lines, _)
-        require("osc52").copy(table.concat(lines, "\n"))
-      end
-
-      local function paste()
-        return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
-      end
-
-      vim.g.clipboard = {
-        name = "osc52",
-        copy = { ["+"] = copy, ["*"] = copy },
-        paste = { ["+"] = paste, ["*"] = paste },
-      }
-
-      -- Now the '+' register will copy to system clipboard using OSC52
-      -- vim.keymap.set("n", "<A-c>", '"+y')
-      -- vim.keymap.set("n", "<A-c>c", '"+yy')
-    end,
-  },
-
   -- add git-messenger
   {
     "rhysd/git-messenger.vim",
@@ -97,12 +66,12 @@ return {
     "lewis6991/gitsigns.nvim",
     opts = {
       signs = {
-        add = { hl = "GitSignsAdd", text = "A|", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
-        change = { hl = "GitSignsChange", text = "C|", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
-        delete = { hl = "GitSignsDelete", text = "D_", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-        topdelete = { hl = "GitSignsDelete", text = "D‾", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-        changedelete = { hl = "GitSignsChange", text = "D~", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
-        untracked = { hl = "GitSignsAdd", text = "A┆", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
+        -- add = { hl = "GitSignsAdd", text = "A|", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
+        -- change = { hl = "GitSignsChange", text = "C|", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+        -- delete = { hl = "GitSignsDelete", text = "D_", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
+        -- topdelete = { hl = "GitSignsDelete", text = "D‾", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
+        -- changedelete = { hl = "GitSignsChange", text = "D~", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+        -- untracked = { hl = "GitSignsAdd", text = "A┆", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
       },
       on_attach = function(buffer)
         local gs = package.loaded.gitsigns

@@ -38,5 +38,5 @@ return {
     config = function()
       require("flybuf").setup({})
     end,
-  }
+  },
 }
