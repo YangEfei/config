@@ -16,27 +16,4 @@ return {
       opts.winbar = { lualine_a = { "filename" }, lualine_c = { navic } }
     end,
   },
-  {
-    "akinsho/bufferline.nvim",
-    after = "catppuccin",
-    keys = {
-      { "<leader>bp", "<cmd>BufferLinePick<cr>", desc = "Pick Buffer" },
-      { "<leader>bc", "<cmd>BufferLinePickClose<cr>", desc = "Pick Buffer Close" },
-    },
-    opts = function()
-      require("bufferline").setup({
-        highlights = require("catppuccin.groups.integrations.bufferline").get(),
-      })
-    end,
-  },
-  {
-    "glepnir/flybuf.nvim",
-    cmd = "FlyBuf",
-    keys = {
-      { "<leader>bf", "<cmd>FlyBuf<cr>", desc = "Fly to Buffer" }
-    },
-    config = function()
-      require("flybuf").setup({})
-    end,
-  },
 }

@@ -10,6 +10,15 @@ return {
       },
     },
   },
+  {
+    "mason.nvim",
+    opts = {
+      pip = {
+        upgrade_pip = true,
+        install_args = { "--index-url", "https://pypi.org/simple", "--extra-index-url", "https://pypi.tuna.tsinghua.edu.cn/simple" },
+      }
+    }
+  },
 
   -- add formatter and diagnostics for c/cpp
   -- {

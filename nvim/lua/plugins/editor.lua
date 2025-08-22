@@ -17,6 +17,12 @@ return {
         ["--history"] = vim.fn.stdpath("data") .. "/fzf-lua-history",
       },
     },
+    keys = {
+      { "<leader><space>", LazyVim.pick("files", { line_query = true }), desc = "Find Files (Root Dir)" },
+      { "<leader>ff", LazyVim.pick("files", { line_query = true }), desc = "Find Files (Root Dir)" },
+      { "<leader>fF", LazyVim.pick("files", { root = false, line_query = true }), desc = "Find Files (cwd)" },
+      { "<leader>fR", LazyVim.pick("oldfiles", { cwd = vim.uv.cwd(), line_query = true }), desc = "Recent (cwd)" },
+    }
   },
   -- modify which-key register map
   {
